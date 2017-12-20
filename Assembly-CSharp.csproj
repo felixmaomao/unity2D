@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ArmRotation.cs" />
+     <Compile Include="Assets\Weapon.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>I:/SoftWare/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

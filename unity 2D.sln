@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity 2D", "Assembly-CSharp-firstpass.csproj", "{07709B35-EF77-443D-283F-A8C4BAD28C97}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity 2D.Plugins", "unity 2D.Plugins.csproj", "{197B9DE1-DD08-4BF8-2844-B24E53C468C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{07709B35-EF77-443D-283F-A8C4BAD28C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07709B35-EF77-443D-283F-A8C4BAD28C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07709B35-EF77-443D-283F-A8C4BAD28C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07709B35-EF77-443D-283F-A8C4BAD28C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{197B9DE1-DD08-4BF8-2844-B24E53C468C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197B9DE1-DD08-4BF8-2844-B24E53C468C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197B9DE1-DD08-4BF8-2844-B24E53C468C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197B9DE1-DD08-4BF8-2844-B24E53C468C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
