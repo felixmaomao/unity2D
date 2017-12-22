@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace UnitySampleAssets._2D
@@ -11,6 +12,7 @@ namespace UnitySampleAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
+        public float yPosRestriction = -1;
 
         private float offsetZ;
         private Vector3 lastTargetPosition;
@@ -28,7 +30,13 @@ namespace UnitySampleAssets._2D
         // Update is called once per frame
         private void Update()
         {
-
+            //player 死亡，target 会为空
+            if (target==null)
+            {
+                //寻找，并重新绑定到镜头的跟踪对象
+                FindPlayer();
+                return;
+            }
             // only update lookahead pos if accelerating or changed direction
             float xMoveDelta = (target.position - lastTargetPosition).x;
 
@@ -46,9 +54,21 @@ namespace UnitySampleAssets._2D
             Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward*offsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
 
-            transform.position = newPos;
+            //player 掉落之后，镜头不再跟踪          
+            newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y, yPosRestriction, Mathf.Infinity), newPos.z);
 
+            transform.position = newPos;
+            
             lastTargetPosition = target.position;
+        }
+
+        private void FindPlayer()
+        {
+            GameObject searchResult= GameObject.FindGameObjectWithTag("Player");
+            if (null!=searchResult)
+            {
+                target = searchResult.transform;
+            }
         }
     }
 }
