@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 
 namespace Assets.Standard_Assets._2D.Scripts
-{
+{   
     public class GameMaster : MonoBehaviour
     {
         public static GameMaster gm;
-
+        
         private void Start()
         {
             if (gm == null)
@@ -36,8 +36,6 @@ namespace Assets.Standard_Assets._2D.Scripts
             Destroy(player.gameObject);
             gm.RespawnPlayer();
         }
-
         
-
     }
 }
