@@ -35,6 +35,7 @@ namespace Assets.Standard_Assets._2D.Scripts
         {
             Destroy(player.gameObject);
             gm.RespawnPlayer();
+                  
         }
         
     }
