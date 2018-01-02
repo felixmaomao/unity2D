@@ -12,6 +12,6 @@ namespace Assets.Standard_Assets._2D.Scripts
         public float updateRate = 2f;
 
         private Seeker seeker;
-        private 
+       
     }
 }
