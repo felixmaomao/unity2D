@@ -84,8 +84,10 @@ namespace UnitySampleAssets._2D
                     Flip();
             }
             // If the player should jump...
+            Debug.Log("grounded"+grounded+"jump"+jump+"anmi"+anim.GetBool("Ground"));
             if (grounded && jump && anim.GetBool("Ground"))
             {
+                Debug.Log("-----reached jump condition");
                 // Add a vertical force to the player.
                 grounded = false;
                 anim.SetBool("Ground", false);

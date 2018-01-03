@@ -18,7 +18,7 @@ namespace UnitySampleAssets._2D
         {
             if(!jump)
             // Read the jump input in Update so button presses aren't missed.
-			if(Input.GetKeyDown(KeyCode.Space)){
+			if(Input.GetKeyDown(KeyCode.Space)){                  
 				jump = true;
 			}
            
