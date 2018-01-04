@@ -45,8 +45,11 @@ namespace Assets.Standard_Assets._2D.Scripts
             StartCoroutine(UpdatePath());
         }
 
+
+        //延时操作经典写法  start其实就相当于执行个moveNext（），这样子就能每隔0.5秒执行一次查找了（直到找到），而不必每一帧都去查找
         IEnumerator SearchForPlayer()
         {
+            //真正可能比较耗性能的操作
             GameObject sResult= GameObject.FindGameObjectWithTag("Player");
             if (sResult==null)  
             {
