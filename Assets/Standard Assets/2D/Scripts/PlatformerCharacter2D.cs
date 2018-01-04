@@ -83,8 +83,7 @@ namespace UnitySampleAssets._2D
                     // ... flip the player.
                     Flip();
             }
-            // If the player should jump...
-            Debug.Log("grounded"+grounded+"jump"+jump+"anmi"+anim.GetBool("Ground"));
+            // If the player should jump...           
             if (grounded && jump && anim.GetBool("Ground"))
             {
                 Debug.Log("-----reached jump condition");

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50714540241221240}
   - component: {fileID: 114183148170779178}
   - component: {fileID: 58895389769987534}
+  - component: {fileID: 114801888429265226}
   m_Layer: 0
   m_Name: AlienSpaceship
   m_TagString: Untagged
@@ -92,10 +93,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 300
+  speed: 200
   fMode: 0
   pathEnded: 0
   nextWayPointDistance: 3
+--- !u!114 &114801888429265226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614539067732326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffac6aa286e1124bb609f69026a9601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats:
+    Health: 100
 --- !u!114 &114848938396342702
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Assets.Standard_Assets._2D.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
     public float fireRate = 0;
-    public float Damage = 10;
+    public int Damage = 10;
     public LayerMask whatToHit;
     public Transform BulletTrailPrefab;
     public Transform MuzzleFlashPrefab;
@@ -51,11 +52,16 @@ public class Weapon : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
         ShootEffect();
         //攻击划线
-        //Debug.DrawLine(firePointPosition, (mousePosition - firePointPosition) * 100, Color.cyan);
+        Debug.DrawLine(firePointPosition, (mousePosition - firePointPosition) * 100, Color.cyan);
         if (hit.collider!=null)
         {
-            Debug.DrawLine(firePointPosition, hit.point, Color.red);
-            Debug.Log("we have hit " + hit.collider.name + " and caused " + Damage + "damage.");
+            Debug.DrawLine(firePointPosition, hit.point, Color.red);          
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
+            if (enemy!=null)
+            {
+                enemy.DamageEnemy(Damage);
+                Debug.Log("we have hit " + hit.collider.name + " and caused " + Damage + "damage.");
+            }
         }
         PlayShootNoise();
     }

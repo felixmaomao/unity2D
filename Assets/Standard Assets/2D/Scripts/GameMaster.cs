@@ -34,8 +34,13 @@ namespace Assets.Standard_Assets._2D.Scripts
         public static void KillPlayer(Player player)
         {
             Destroy(player.gameObject);
-            gm.RespawnPlayer();
-                  
+            gm.RespawnPlayer();                  
+        }
+
+        //敌人死亡
+        public static void KillEnemy(Enemy enemy)
+        {
+            Destroy(enemy.gameObject);
         }
         
     }

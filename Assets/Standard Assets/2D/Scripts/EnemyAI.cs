@@ -34,21 +34,43 @@ namespace Assets.Standard_Assets._2D.Scripts
             rb = GetComponent<Rigidbody2D>();
             if (target == null)
             {
-                Debug.LogError("No Player Found?Panic!");
-                searchingForPlayer = true;
-                StartCoroutine               
+                if (!searchingForPlayer)
+                {
+                    searchingForPlayer = true;
+                    StartCoroutine(SearchForPlayer());
+                }
             }
             // 执行路径寻找方法，并将结果返回给onPathComplete 方法
             seeker.StartPath(transform.position,target.position,OnPathComplete);
             StartCoroutine(UpdatePath());
         }
 
+        IEnumerator SearchForPlayer()
+        {
+            GameObject sResult= GameObject.FindGameObjectWithTag("Player");
+            if (sResult==null)  
+            {
+                yield return new WaitForSeconds(0.5f);
+                StartCoroutine(SearchForPlayer());
+            }
+            else
+            {
+                target = sResult.transform;
+                searchingForPlayer = false;
+                StartCoroutine(UpdatePath());
+            }
+            
+        }
+
         IEnumerator UpdatePath()
         {
-            if (target==null)
+            if (target == null)
             {
-                //todo insert a player search here;
-                //return false;
+                if (!searchingForPlayer)
+                {
+                    searchingForPlayer = true;
+                    StartCoroutine(SearchForPlayer());
+                }
             }
             seeker.StartPath(transform.position, target.position, OnPathComplete);
             yield return new WaitForSeconds(1f / updateRate);
@@ -69,8 +91,11 @@ namespace Assets.Standard_Assets._2D.Scripts
         {
             if (target == null)
             {
-                //todo insert a player search here;
-                return;
+                if (!searchingForPlayer)
+                {
+                    searchingForPlayer = true;
+                    StartCoroutine(SearchForPlayer());
+                }               
             }
             if (path==null)
             {
