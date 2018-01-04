@@ -22,9 +22,11 @@ namespace Assets.Standard_Assets._2D.Scripts
         [HideInInspector]
         public bool pathEnded = false;
         //ai向下一个点移动的最大距离
-        public float nextWayPointDistance = 3;
+        public float nextWayPointDistance = 3; 
         //我们这在向这儿移动的点
         private int currentWayPoint = 0;
+
+        private bool searchingForPlayer = false;
 
         private void Start()
         {
@@ -33,7 +35,8 @@ namespace Assets.Standard_Assets._2D.Scripts
             if (target == null)
             {
                 Debug.LogError("No Player Found?Panic!");
-                return;
+                searchingForPlayer = true;
+                StartCoroutine               
             }
             // 执行路径寻找方法，并将结果返回给onPathComplete 方法
             seeker.StartPath(transform.position,target.position,OnPathComplete);
