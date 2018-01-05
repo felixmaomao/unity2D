@@ -188,6 +188,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\BulletsPool.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\Enemy.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\MoveTrail.cs" />
