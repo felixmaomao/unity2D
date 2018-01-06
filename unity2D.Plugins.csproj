@@ -188,6 +188,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\BulletsPool.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Enemy.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\GameMaster.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Player.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Restarter.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\StatusIndicator.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Tiling.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Weapon.cs" />
   </ItemGroup>
