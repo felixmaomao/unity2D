@@ -171,6 +171,7 @@ MonoBehaviour:
     type: 2}
   MuzzleFlashPrefab: {fileID: 4421083574374306, guid: 179774482ba764b4588b7a9454ef25a7,
     type: 2}
+  HitPrefab: {fileID: 4791281718461854, guid: c881d8cca3a38ef439b587f14a13098c, type: 2}
 --- !u!212 &212315827079600790
 SpriteRenderer:
   m_ObjectHideFlags: 1

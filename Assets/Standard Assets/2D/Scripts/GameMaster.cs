@@ -24,7 +24,9 @@ namespace Assets.Standard_Assets._2D.Scripts
 
         public void RespawnPlayer()
         {
+            //复活音效
             this.GetComponent<AudioSource>().Play();
+            //间隔三秒钟复活 怎么写？
             Instantiate(playerPrefab,spawnPoint.position,spawnPoint.rotation);
             //复活特效
             // Instantiate(spawnPrefab,spawnPoint.position,spawnPoint.rotation);           

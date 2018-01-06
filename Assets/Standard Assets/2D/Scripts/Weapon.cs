@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour {
     public LayerMask whatToHit;
     public Transform BulletTrailPrefab;
     public Transform MuzzleFlashPrefab;
+    public Transform HitPrefab;
 
 
     float timeToFire = 0;
@@ -50,7 +51,18 @@ public class Weapon : MonoBehaviour {
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
-        ShootEffect();
+
+        //是否射击到物体，如果射击到了，那么攻击划线不能穿过去，并且在碰撞位置要放置射击碰撞特效
+        Vector3 hitPos;
+        if (hit.collider == null)
+        {
+            hitPos = (mousePosition - firePointPosition) * 30;
+        }
+        else
+        {
+            hitPos = hit.point;  
+        }          
+        ShootEffect(hitPos);
         //攻击划线
         Debug.DrawLine(firePointPosition, (mousePosition - firePointPosition) * 100, Color.cyan);
         if (hit.collider!=null)
@@ -66,9 +78,18 @@ public class Weapon : MonoBehaviour {
         PlayShootNoise();
     }
 
-    void ShootEffect()
+    void ShootEffect(Vector3 hitPos)
     {       
+        //创建子弹飞行特效
         Instantiate(BulletTrailPrefab,firePoint.position,firePoint.rotation);
+        //射击碰撞特效
+        Transform hitPrefab = Instantiate(HitPrefab, hitPos, firePoint.rotation) as Transform;
+        Destroy(hitPrefab.gameObject,1f);
+        if (hitPrefab==null)
+        {
+            Debug.Log("hitprefab has been destroyed");
+        }
+        //枪口爆破特效
         Transform clone = Instantiate(MuzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
         clone.parent = firePoint;
         float size = Random.Range(0.7f, 0.9f);
