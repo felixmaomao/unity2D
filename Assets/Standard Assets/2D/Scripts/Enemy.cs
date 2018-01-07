@@ -19,12 +19,14 @@ namespace Assets.Standard_Assets._2D.Scripts
                 set { _currentHealth = Mathf.Clamp(value, 0, maxHealth); }
             }
 
+            public int damage = 40;
             public void Init() {
                 CurrentHealth = maxHealth;
             }
         }
 
         public EnemyStats enemyStats = new EnemyStats();
+        public Transform deathParticles;
 
         [Header("Optional: ")]
         [SerializeField]
@@ -38,6 +40,10 @@ namespace Assets.Standard_Assets._2D.Scripts
             {
                 statusIndicator.SetHealth(enemyStats.CurrentHealth, enemyStats.maxHealth);
             }
+            if (deathParticles==null)
+            {
+                Debug.Log("lack of enemy deathParticles");
+            }
         }
        
         public void DamageEnemy(int damage)
@@ -47,10 +53,20 @@ namespace Assets.Standard_Assets._2D.Scripts
             {
                 GameMaster.KillEnemy(this);
             }
-
             if (statusIndicator != null)
             {
                 statusIndicator.SetHealth(enemyStats.CurrentHealth, enemyStats.maxHealth);
+            }
+        }
+
+        //碰撞检测
+        private void OnCollisionEnter2D(Collision2D _colInfo)
+        {
+            Player player = _colInfo.collider.GetComponent<Player>();
+            if (player!=null)
+            {
+                player.DamagePlayer(enemyStats.damage);
+                GameMaster.gm._killEnemy(this);
             }
         }
     }

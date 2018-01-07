@@ -42,8 +42,17 @@ namespace Assets.Standard_Assets._2D.Scripts
         //敌人死亡
         public static void KillEnemy(Enemy enemy)
         {
-            Destroy(enemy.gameObject);
+            gm._killEnemy(enemy);
         }
         
+        public void _killEnemy(Enemy enemy)
+        {
+            Destroy(enemy.gameObject);
+            if (enemy.deathParticles!=null)
+            {
+                Transform clone = Instantiate(enemy.deathParticles,enemy.transform.position,Quaternion.identity) as Transform;
+                Destroy(clone.gameObject,2f);
+            }            
+        }
     }
 }

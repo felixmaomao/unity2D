@@ -71,8 +71,7 @@ public class Weapon : MonoBehaviour {
             Enemy enemy = hit.collider.GetComponent<Enemy>();
             if (enemy!=null)
             {
-                enemy.DamageEnemy(Damage);
-                Debug.Log("we have hit " + hit.collider.name + " and caused " + Damage + "damage.");
+                enemy.DamageEnemy(Damage);          
             }
         }
         PlayShootNoise();

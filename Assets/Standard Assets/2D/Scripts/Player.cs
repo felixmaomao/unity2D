@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 using System.Text;
 
@@ -11,13 +12,40 @@ namespace Assets.Standard_Assets._2D.Scripts
         [System.Serializable]
         public class PlayerStats
         {
-            public int Health = 100;
+            public int MaxHealth = 120;
+            private int _currentHealth;
+            public int CurrentHealth
+            {
+                get { return _currentHealth; }
+                set {
+                    _currentHealth = Mathf.Clamp(value, 0, MaxHealth);
+                }
+            }
+
+            public void Init()
+            {
+                CurrentHealth = MaxHealth;
+            }
+
         }
+
+        [Header("Optional: ")]
+        [SerializeField]
+        private StatusIndicator statusIndicator;
 
         //掉落上限
         public int FallBoundary = -20;
 
-        public PlayerStats playerStats=new PlayerStats();
+        public PlayerStats playerStats = new PlayerStats();
+
+        private void Start()
+        {
+            playerStats.Init();
+            if (statusIndicator!=null)
+            {
+                statusIndicator.SetHealth(playerStats.CurrentHealth, playerStats.MaxHealth);
+            }
+        }
 
         private void Update()
         {
@@ -29,10 +57,14 @@ namespace Assets.Standard_Assets._2D.Scripts
 
         public void DamagePlayer(int damage)
         {
-            playerStats.Health -= damage;
-            if (playerStats.Health<=0)
+            playerStats.CurrentHealth -= damage;
+            if (playerStats.CurrentHealth <= 0)
             {
                 GameMaster.KillPlayer(this);
+            }
+            if (statusIndicator != null)
+            {
+                statusIndicator.SetHealth(playerStats.CurrentHealth, playerStats.MaxHealth);
             }
         }
     }
