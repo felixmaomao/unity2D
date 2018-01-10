@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity2D.Plugins", "unity2D.Plugins.csproj", "{F67BFB50-9C45-2764-50F9-951ABF50592A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity2D", "unity2D.csproj", "{C49EC825-B362-7F0B-154D-E115EE289A1A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity2D.Editor.Plugins", "unity2D.Editor.Plugins.csproj", "{EF4AA12C-F6FF-6352-C03E-71F89474CCD5}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{F67BFB50-9C45-2764-50F9-951ABF50592A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F67BFB50-9C45-2764-50F9-951ABF50592A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F67BFB50-9C45-2764-50F9-951ABF50592A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49EC825-B362-7F0B-154D-E115EE289A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49EC825-B362-7F0B-154D-E115EE289A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49EC825-B362-7F0B-154D-E115EE289A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49EC825-B362-7F0B-154D-E115EE289A1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF4AA12C-F6FF-6352-C03E-71F89474CCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF4AA12C-F6FF-6352-C03E-71F89474CCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF4AA12C-F6FF-6352-C03E-71F89474CCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
