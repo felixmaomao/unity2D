@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
 
     float timeToFire = 0;
     Transform firePoint;
-    private AudioClip PistolAudioClip;
+    //private AudioClip PistolAudioClip;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour {
         {
             Debug.Log("firePoint is null");
         }
-        PistolAudioClip = Resources.Load("pistol") as AudioClip;
+        //PistolAudioClip = Resources.Load("pistol") as AudioClip;
     }
 
     // Update is called once per frame
@@ -98,12 +98,15 @@ public class Weapon : MonoBehaviour {
 
     private void PlayShootNoise()
     {
-        if (PistolAudioClip != null)
-        {
+       
             AudioSource audioSource = GetComponent<AudioSource>();
-            audioSource.clip = PistolAudioClip;
+            if (audioSource.clip==null)
+            {
+                Debug.LogError("none audio clip exists");
+            }
+            //audioSource.clip = PistolAudioClip;
             audioSource.time = 0;
             audioSource.Play();
-        }
+
     }
 }
