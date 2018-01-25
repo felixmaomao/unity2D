@@ -52,7 +52,6 @@ artifacts/
 *_p.c
 *_i.h
 *.ilk
-*.meta
 *.obj
 *.pch
 *.pdb
@@ -72,6 +71,13 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Builds
+*.apk
+*.unitypackage
 
 # Chutzpah Test files
 _Chutzpah*
