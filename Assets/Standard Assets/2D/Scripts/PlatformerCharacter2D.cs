@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Standard_Assets._2D.Scripts;
+using UnityEngine;
 
 namespace UnitySampleAssets._2D
 {
@@ -25,6 +26,7 @@ namespace UnitySampleAssets._2D
 		private Rigidbody2D playerRigidbody2D;
         private Transform playerGraphics;
 
+
         private void Awake()
         {
             // Setting up references.
@@ -46,7 +48,7 @@ namespace UnitySampleAssets._2D
 			anim.SetFloat("vSpeed", playerRigidbody2D.velocity.y);
         }
 
-
+        //角色移动
         public void Move(float move, bool crouch, bool jump)
         {
 
@@ -94,7 +96,10 @@ namespace UnitySampleAssets._2D
             }
         }
 
-
+        /*
+          *Author:Felix
+          *Description: 角色反转
+        */   
         private void Flip()
         {
             // Switch the way the player is labelled as facing.
@@ -105,5 +110,23 @@ namespace UnitySampleAssets._2D
             theScale.x *= -1;
             playerGraphics.localScale = theScale;           
         }
+
+
+        /*
+          *Author:Felix
+          *Description: 更换武器                
+        */
+        public void ChangeWeapon()
+        {
+            Destroy(gameObject.transform.Find("Pistol"));
+            GameObject pistolPrefab = (GameObject)Resources.Load("Prefabs/m16");
+            if (pistolPrefab==null)
+            {
+                Debug.LogError("prefab not found");
+            }
+            GameObject pistol= Instantiate(pistolPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            pistol.transform.parent = gameObject.transform;
+        }
+
     }
 } 

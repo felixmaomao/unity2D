@@ -21,7 +21,11 @@ namespace UnitySampleAssets._2D
 			if(Input.GetKeyDown(KeyCode.W)){                  
 				jump = true;
 			}
-           
+            //手动触发切换武器
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                character.ChangeWeapon();
+            }
         }
 
         private void FixedUpdate()
@@ -33,5 +37,6 @@ namespace UnitySampleAssets._2D
             character.Move(h, crouch, jump);
             jump = false;
         }
+     
     }
 }
