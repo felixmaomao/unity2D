@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4409399099149820}
   - component: {fileID: 212783720850807712}
-  - component: {fileID: 114901835628064682}
   - component: {fileID: 82212953547261296}
+  - component: {fileID: 114830469672919540}
   m_Layer: 0
   m_Name: m16
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420761293607510}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -5.98, y: -3.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 4185340382007426}
@@ -80,9 +80,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a45fcbd1c62fb1349864204ee8eb0a54, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c530b6c353e24244e81f68b836dbbdc9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.466
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -151,7 +151,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114901835628064682
+--- !u!114 &114830469672919540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -159,19 +159,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420761293607510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df227c4a296077d438cd6d6ea393fb8c, type: 3}
+  m_Script: {fileID: 11500000, guid: f777eacecf5d3ab4fa2a10d63ab4b174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
-  Damage: 10
-  whatToHit:
-    serializedVersion: 2
-    m_Bits: 4294967263
-  BulletTrailPrefab: {fileID: 4693042233022748, guid: 7252bfa262cbb7f449cc50b0687638f8,
-    type: 2}
-  MuzzleFlashPrefab: {fileID: 4421083574374306, guid: 179774482ba764b4588b7a9454ef25a7,
-    type: 2}
-  HitPrefab: {fileID: 4791281718461854, guid: 2ec0c7d110216c04b8359bf35a7cc713, type: 2}
 --- !u!212 &212783720850807712
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -201,15 +191,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ade54885f9a417e4cb56c6059fe77d9f, type: 3}
+  m_SortingLayerID: 1756510793
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 3e58de900b41a614e85f6d63634347d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 18.07, y: 7.26}
+  m_Size: {x: 18.07, y: 7.2599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

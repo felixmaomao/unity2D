@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
+public class WeaponPistol : MonoBehaviour, IWeapon
+{
 
     public float fireRate = 0;
     public int Damage = 10;
@@ -12,10 +13,8 @@ public class Weapon : MonoBehaviour {
     public Transform MuzzleFlashPrefab;
     public Transform HitPrefab;
 
-
     float timeToFire = 0;
-    Transform firePoint;
-    //private AudioClip PistolAudioClip;
+    Transform firePoint;   
 
     private void Awake()
     {
@@ -23,8 +22,7 @@ public class Weapon : MonoBehaviour {
         if (null==firePoint)
         {
             Debug.Log("firePoint is null");
-        }
-        //PistolAudioClip = Resources.Load("pistol") as AudioClip;
+        }       
     }
 
     // Update is called once per frame
@@ -46,7 +44,7 @@ public class Weapon : MonoBehaviour {
         }		
 	}
 
-    private void Shoot()
+    public void Shoot()
     {
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
@@ -103,8 +101,7 @@ public class Weapon : MonoBehaviour {
             if (audioSource.clip==null)
             {
                 Debug.LogError("none audio clip exists");
-            }
-            //audioSource.clip = PistolAudioClip;
+            }           
             audioSource.time = 0;
             audioSource.Play();
 

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -186,6 +188,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\Enemy.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\IWeapon.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\MoveTrail.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
@@ -195,7 +198,8 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\Restarter.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\StatusIndicator.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Tiling.cs" />
-    <Compile Include="Assets\Standard Assets\2D\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\WeaponM16.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\WeaponPistol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\2D\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.cginc" />
