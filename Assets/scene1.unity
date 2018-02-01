@@ -498,7 +498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4409399099149820, guid: d23f93e8cb0d3b746992d66811c35639, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4409399099149820, guid: d23f93e8cb0d3b746992d66811c35639, type: 2}
       propertyPath: m_LocalRotation.z
@@ -506,35 +506,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4409399099149820, guid: d23f93e8cb0d3b746992d66811c35639, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4409399099149820, guid: d23f93e8cb0d3b746992d66811c35639, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114830469672919540, guid: d23f93e8cb0d3b746992d66811c35639,
-        type: 2}
-      propertyPath: whatToHit.m_Bits
-      value: 4294967247
-      objectReference: {fileID: 0}
-    - target: {fileID: 114830469672919540, guid: d23f93e8cb0d3b746992d66811c35639,
-        type: 2}
-      propertyPath: MuzzleFlashPrefab
-      value: 
-      objectReference: {fileID: 4421083574374306, guid: 179774482ba764b4588b7a9454ef25a7,
-        type: 2}
-    - target: {fileID: 114830469672919540, guid: d23f93e8cb0d3b746992d66811c35639,
-        type: 2}
-      propertyPath: BulletTrailPrefab
-      value: 
-      objectReference: {fileID: 4693042233022748, guid: 7252bfa262cbb7f449cc50b0687638f8,
-        type: 2}
-    - target: {fileID: 114830469672919540, guid: d23f93e8cb0d3b746992d66811c35639,
-        type: 2}
-      propertyPath: HitPrefab
-      value: 
-      objectReference: {fileID: 4791281718461854, guid: 2ec0c7d110216c04b8359bf35a7cc713,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d23f93e8cb0d3b746992d66811c35639, type: 2}
   m_IsPrefabParent: 0

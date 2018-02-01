@@ -118,14 +118,24 @@ namespace UnitySampleAssets._2D
         */
         public void ChangeWeapon()
         {
-            Destroy(gameObject.transform.Find("Pistol"));
-            GameObject pistolPrefab = (GameObject)Resources.Load("Prefabs/m16");
-            if (pistolPrefab==null)
+            Transform nowWeapon = gameObject.transform.Find("Pistol");
+            if (nowWeapon == null)
+            {
+                Debug.Log("no weapon now");
+            }
+            else
+            {
+                Destroy(nowWeapon);
+            }
+            GameObject weaponPrefab = (GameObject)Resources.Load("m16");
+            if (weaponPrefab == null)
             {
                 Debug.LogError("prefab not found");
             }
-            GameObject pistol= Instantiate(pistolPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            pistol.transform.parent = gameObject.transform;
+            GameObject weapon= Instantiate(weaponPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            weapon.transform.parent = gameObject.transform.FindChild("Arm");
+            //reset weapon position
+
         }
 
     }

@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420761293607510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 4185340382007426}
@@ -166,7 +166,7 @@ MonoBehaviour:
   Damage: 10
   whatToHit:
     serializedVersion: 2
-    m_Bits: 4294967247
+    m_Bits: 0
   BulletTrailPrefab: {fileID: 4693042233022748, guid: 7252bfa262cbb7f449cc50b0687638f8,
     type: 2}
   MuzzleFlashPrefab: {fileID: 4421083574374306, guid: 179774482ba764b4588b7a9454ef25a7,
