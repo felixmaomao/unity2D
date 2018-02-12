@@ -20,12 +20,7 @@ namespace UnitySampleAssets._2D
             // Read the jump input in Update so button presses aren't missed.
 			if(Input.GetKeyDown(KeyCode.W)){                  
 				jump = true;
-			}
-            //手动触发切换武器
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                character.ChangeWeapon();
-            }
+			}      
         }
 
         private void FixedUpdate()
@@ -36,6 +31,12 @@ namespace UnitySampleAssets._2D
             // Pass all parameters to the character control script.
             character.Move(h, crouch, jump);
             jump = false;
+
+            //手动触发切换武器
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                character.ChangeWeapon();
+            }
         }
      
     }
