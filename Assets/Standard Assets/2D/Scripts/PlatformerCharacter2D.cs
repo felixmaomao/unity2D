@@ -119,6 +119,7 @@ namespace UnitySampleAssets._2D
         public void ChangeWeapon()
         {
             Debug.Log("change weapon");
+            GameObject arm = GameObject.Find("Arm");
             GameObject nowWeapon = GameObject.Find("Arm/Pistol");
             if (nowWeapon == null)
             {
@@ -138,12 +139,14 @@ namespace UnitySampleAssets._2D
                 Destroy(nowWeapon);
             }
             GameObject weaponPrefab = (GameObject)Resources.Load("m16");
+            weaponPrefab.SetActive(true);
+            weaponPrefab.name = "m16";
             if (weaponPrefab == null)
             {
                 Debug.LogError("prefab not found");
             }
             GameObject weapon= Instantiate(weaponPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            weapon.transform.SetParent(GameObject.Find("Arm").GetComponent<Transform>());
+            weapon.transform.SetParent(arm.transform);
             //reset weapon position
 
         }
