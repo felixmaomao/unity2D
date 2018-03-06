@@ -23,6 +23,8 @@ namespace UnitySampleAssets._2D
 			}      
         }
 
+
+        float timeLost = 0;
         private void FixedUpdate()
         {
             // Read the inputs.
@@ -32,10 +34,15 @@ namespace UnitySampleAssets._2D
             character.Move(h, crouch, jump);
             jump = false;
 
-            //手动触发切换武器
+            //手动触发切换武器            
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                character.ChangeWeapon();
+                if (Time.time-timeLost>1)
+                {
+                    Debug.Log("you have clicked button Q");
+                    character.ChangeWeapon();
+                }
+                timeLost = Time.time;
             }
         }
      
